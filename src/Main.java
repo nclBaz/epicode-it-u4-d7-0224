@@ -126,5 +126,48 @@ public class Main {
 		usersTreeSet.add(giovanni);
 		System.out.println(usersTreeSet);
 
+		// ****************************************************** MAPS ******************************************
+		// Le Map sono strutture in cui ogni elemento sarà rappresentato dalla coppia <Chiave, Valore>
+		Map<Integer, User> usersMap = new HashMap<>();
+		// Sto dichiarando che ogni elemento della Map avrà come chiave un numero intero e come valore uno User
+		// Ogni elemento sarà tipo:
+		// 111111 - Aldo Baglio 20
+		// 222222 - Giovanni Storti 30
+
+		Map<String, String> dizionario = new HashMap<>(); // Qua sia chiavi che valori sono String
+		// Ogni elemento sarà tipo:
+		// "albero" - "Definizione di albero..."
+		// "casa" - "Definizione di casa..."
+
+		System.out.println("---------------------------------------- AGGIUNTA ELEMENTI -----------------------------------");
+		usersMap.put(111111, aldo);
+		usersMap.put(222222, giovanni);
+		usersMap.put(333333, aldo);
+
+		System.out.println(usersMap);
+
+		dizionario.put("albero", "Definizione di albero...");
+		dizionario.put("casa", "Definizione di casa...");
+		dizionario.put("casa", "Altra definizione di casa..."); // Non ci possono essere duplicati nelle chiavi
+
+		System.out.println(dizionario);
+
+		System.out.println("---------------------------------------- LEGGERE ELEMENTI -----------------------------------");
+		System.out.println(dizionario.get("albero")); // La chiave serve per accedere agli elementi in lettura, scrittura, rimozione...
+
+		dizionario.replace("albero", "Definizione più aggiornata di albero");
+		System.out.println(dizionario);
+		// dizionario.remove("albero");
+		System.out.println(dizionario);
+
+		Set<String> chiaviDizionario = dizionario.keySet(); // Mi ritorna l'elenco di tutte le chiavi
+
+		for (String chiave : chiaviDizionario) {
+			System.out.println("Chiave: " + chiave);
+			System.out.println("Valore: " + dizionario.get(chiave));
+		}
+
+		// dizionario.values();  <-- Ritorna l'elenco dei valori
+
 	}
 }
