@@ -1,6 +1,6 @@
 package entities;
 
-public class User {
+public class User implements Comparable<User> {
 	private String firstName;
 	private String lastName;
 	private int age;
@@ -42,5 +42,10 @@ public class User {
 				", lastName='" + lastName + '\'' +
 				", age=" + age +
 				'}';
+	}
+
+	@Override
+	public int compareTo(User o) { // Metodo utilizzato nei TreeSet
+		return this.getLastName().compareTo(o.getLastName());
 	}
 }
